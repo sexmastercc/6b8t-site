@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6b8t</title>
+        <link rel="icon" href="https://res.cloudinary.com/dnwktgiik/image/upload/v1721253576/ez_qz0cxc.png" type="image/png">
+    <style>
+        body {
+            background-color: #36454F;
+            color: white; 
+            font-family: Arial, sans-serif;
+            height: 100vh; 
+            margin: 0;
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            align-items: stretch; 
+            justify-items: center;
+        }
+
+        h1 {
+            font-size: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10%; 
+        }
+
+        p {
+            font-size: 32px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10%;
+            padding: 20px; 
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1); 
+            backdrop-filter: blur(5px);
+        }
+
+        .discord-button {
+            display: inline-block;
+            margin-top: -40px;
+            margin-left: 150px;
+            padding: 10px 20px;
+            background-color: #7289DA; 
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+
+        .discord-button:hover {
+            background-color: #5865F2;
+        }
+
+        .copy-ip-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #90EE90;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: -40px;
+            cursor: pointer;
+        }
+
+        .copy-ip-button:hover {
+            background-color: #73D218; 
+        }
+
+        .notification-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            z-index: 1000;
+        }
+
+        .notification {
+            font-weight: bold;
+        }
+
+
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .vertical-line {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: black;
+        }
+
+        img {
+            max-width: 100%; 
+            height: auto; 
+        }
+
+        .green1 {
+            color: #10ee10;
+        }
+
+        .green2 {
+            color: #008000; 
+            margin-right: 20px;
+        }
+
+        .red {
+            color: #800000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1><span class="green1">6b</span><span class="green2">8t</span> <span class="red">Anarchy</span></h1>
+            <p>6b8t is an anarchy server that is on Minecraft 1.12.2 and it runs on the community, there are no rules, and no anti-cheat. I try to be a good owner</p>
+            <a href="https://discord.gg/VE7eGU46DV" class="discord-button">Join our Discord Server</a>
+            <a href="#" id="copy-ip-btn" class="copy-ip-button">Copy IP</a>
+            <div id="notification-container" style="display:none;">
+            <div id="clipboard-notification" class="notification">IP Copied!</div>
+            </div>
+        </div>
+        <div class="vertical-line"></div>
+    </div>
+    <img src="https://res.cloudinary.com/dnwktgiik/image/upload/v1721251501/2024-07-17_21.21.18_hpucah.png" alt="spawn">
+</body>
+<script>
+document.getElementById('copy-ip-btn').addEventListener('click', async function(event) {
+    event.preventDefault();
+    const text = '6b8t.xyz';
+    
+    try {
+        await navigator.clipboard.writeText(text);
+        var notificationContainer = document.getElementById('notification-container');
+        notificationContainer.style.display = 'flex';
+        
+        setTimeout(function() {
+            notificationContainer.style.display = 'none';
+        }, 2000);
+    } catch (err) {
+        console.error('Failed to copy text: ', err);
+    }
+});
+</script>
+
+
+</html>
